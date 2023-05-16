@@ -1,0 +1,57 @@
+{
+  "name": "karmchenki-soft-bol",
+  "displayName": "Karmchenki Soft-BOL",
+	"description": "provides commands for moving and deleting to the soft-beginning-of-line",
+	"publisher": "Karmchenki",
+	"repository": "https://github.com/vistuleB/karmchenki-soft-bol.git",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+		"commands": [
+			{
+				"command": "karmchenki-soft-bol.moveToSoftBolNoExtend",
+				"title": "Move To Soft Bol No-Extend"
+			},
+			{
+				"command": "karmchenki-soft-bol.moveToSoftBolExtend",
+				"title": "Move To Soft Bol Extend"
+			},
+			{
+				"command": "karmchenki-soft-bol.deleteToSoftBol",
+				"title": "Delete To Soft Bol"
+			},
+			{
+				"command": "karmchenki-soft-bol.deleteSoftBolToEol",
+				"title": "Delete From Soft Bol To Eol"
+			}
+		]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.78.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
